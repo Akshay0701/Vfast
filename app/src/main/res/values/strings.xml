@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">FlashD</string>
+
+    <string-array name="status">
+        <item>Delevery Allocated To Product</item>
+        <item>Picked Product From location</item>
+        <item>On The Way</item>
+        <item>Drop To End Location</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

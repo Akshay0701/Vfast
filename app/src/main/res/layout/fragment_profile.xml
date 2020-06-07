@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".customerFragments.ProfileFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/Unametv"
+            android:layout_width="match_parent"
+            android:text="Name"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_height="wrap_content"></TextView>
+        <TextView
+            android:id="@+id/phonetv"
+            android:layout_width="match_parent"
+            android:text="0992204824"
+            android:layout_height="wrap_content"></TextView>
+    </LinearLayout>
+<View
+    android:layout_width="match_parent"
+    android:background="@color/lightdark"
+    android:layout_height="1dp"></View>
+    <TextView
+        android:layout_width="match_parent"
+        android:text="Main"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_height="wrap_content"></TextView>
+    <TextView
+        android:id="@+id/personalDetails"
+        android:layout_width="match_parent"
+        android:text="Personal Details"
+        android:drawableStart="@drawable/ic_contact"
+        android:padding="18dp"
+        android:textColor="@color/darkk"
+        android:drawablePadding="10dp"
+        android:textSize="20dp"
+        android:layout_height="wrap_content"></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:text="Change region"
+        android:drawableStart="@drawable/ic_region"
+        android:padding="18dp"
+        android:textColor="@color/darkk"
+        android:drawablePadding="10dp"
+        android:textSize="20dp"
+        android:layout_height="wrap_content"></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:text="Statistics"
+        android:drawableStart="@drawable/ic_statics"
+        android:padding="18dp"
+        android:textColor="@color/darkk"
+        android:drawablePadding="10dp"
+        android:textSize="20dp"
+        android:layout_height="wrap_content"></TextView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:background="@color/lightback"
+        android:layout_height="1dp"></View>
+    <TextView
+        android:layout_width="match_parent"
+        android:text="Refer And Earn"
+        android:drawableStart="@drawable/ic_money"
+        android:padding="18dp"
+        android:textColor="@color/colorPrimary"
+        android:drawablePadding="10dp"
+        android:textSize="18dp"
+        android:layout_height="wrap_content"></TextView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:background="@color/lightback"
+        android:layout_height="1dp"></View>
+
+</LinearLayout>

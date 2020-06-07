@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="10dp"
+    app:cardElevation="10dp"
+    app:cardCornerRadius="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorAccent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="60dp"
+            android:id="@+id/avatarIv"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_vertical"
+            android:foregroundGravity="center_vertical"
+            android:layout_marginBottom="10dp"
+            android:layout_height="60dp"
+            android:src="@drawable/boxixon"
+            />
+        <LinearLayout
+            android:layout_marginLeft="13dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:padding="5dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/Unametv"
+                android:text="Stantaram Roa"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:textSize="22dp"
+
+                />
+            <TextView
+                android:id="@+id/pricetxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textAlignment="textEnd"
+                android:text="Price:999$"
+                tools:ignore="RtlCompat" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/lightdark"></View>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:weightSum="3"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/statustxt"
+            android:layout_width="wrap_content"
+            android:text="Status: Sreaching"
+            android:textAlignment="textStart"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"></TextView>
+        <TextView
+            android:id="@+id/weighttxt"
+            android:layout_width="wrap_content"
+            android:text="Weight : 2KG"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"></TextView>
+        <TextView
+            android:id="@+id/producttxt"
+            android:layout_width="wrap_content"
+            android:text="Product : Books"
+            android:textAlignment="textEnd"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:weightSum="2"
+        android:padding="10dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pick Up Address"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                />
+            <TextView
+                android:id="@+id/pickup_address_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Cecilia Chapman
+                        711-2880 Nulla St.
+                        Mankato Mississippi 96522(257) 563-7401"
+                android:textColor="@color/colorDark"
+                android:textSize="15dp"
+                />
+        </LinearLayout>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/lightdark"></View>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="End Up Address"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                />
+            <TextView
+                android:id="@+id/endup_address_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Cecilia Chapman
+711-2880 Nulla St.
+Mankato Mississippi 96522
+(257) 563-7401"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorDark"
+                android:textSize="15dp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="1dp"
+        android:background="@color/lightdark"></View>
+<LinearLayout
+    android:id="@+id/linear1"
+    android:layout_width="match_parent"
+    android:weightSum="2"
+    android:padding="10dp"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Admin Decide This"
+            android:textColor="@color/lightdark"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/pricetxt2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Price : 999$"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="17dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:weightSum="2"
+        android:layout_height="50dp">
+        <ImageView
+            android:id="@+id/acceptOrderBtn"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_accept_order"
+            android:layout_height="40dp"></ImageView>
+        <ImageView
+            android:id="@+id/cancelOrderBtn"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_cancel_order"
+            android:layout_height="40dp"></ImageView>
+    </LinearLayout>
+</LinearLayout>
+    <TextView
+        android:id="@+id/adminDeciTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:text="Admin Decition Pending"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="@color/lightdark"
+        android:textSize="17dp"
+        />
+
+</LinearLayout>
+    <ImageView
+        android:id="@+id/user_deleteOrder"
+        android:layout_width="50dp"
+        android:visibility="gone"
+        android:src="@drawable/ic_delete_order"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="50dp"
+        android:layout_height="50dp"></ImageView>
+</androidx.cardview.widget.CardView>

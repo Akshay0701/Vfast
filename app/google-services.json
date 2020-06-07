@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "374898774460",
+    "firebase_url": "https://vfast-b9d22.firebaseio.com",
+    "project_id": "vfast-b9d22",
+    "storage_bucket": "vfast-b9d22.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374898774460:android:107fa19f33420c79249bb9",
+        "android_client_info": {
+          "package_name": "com.example.vfast"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "374898774460-3vrj389a53u4ifs2496cu97v1jr2kqkn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbpAVJvkOlLomoMAcgPDCJtgCXJjB0RPI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "374898774460-3vrj389a53u4ifs2496cu97v1jr2kqkn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

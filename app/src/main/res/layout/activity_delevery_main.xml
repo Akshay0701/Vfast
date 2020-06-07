@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Delevery.DeleveryMain">
+    <ImageView
+        android:id="@+id/show_myorders"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="20dp"
+        android:background="@color/colorPrimaryDark"
+        android:src="@drawable/ic_delete_order"
+        ></ImageView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+</RelativeLayout>

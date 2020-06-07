@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:background="#008F2E2E"
+    android:gravity="center"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:text="My Orders"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"></TextView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/alret_recycler"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+
+        <Button
+            android:layout_width="match_parent"
+            android:text="cancel"
+            android:textAlignment="textStart"
+            android:textColor="#fff"
+            android:visibility="gone"
+            android:id="@+id/cancel"
+            android:drawableLeft="@drawable/ic_delete_order"
+            android:background="@color/colorPrimaryDark"
+            android:layout_height="wrap_content"></Button>
+
+    </LinearLayout>
+
+</RelativeLayout>

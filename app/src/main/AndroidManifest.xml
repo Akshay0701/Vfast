@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.vfast">
+
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/fdlogo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/fdlogo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".LoadingScreend">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".OrderDetails" />
+        <activity android:name=".customerPages.AddOrder" />
+        <activity android:name=".Delevery.DeleveryMain" />
+        <activity android:name=".customerPages.CustomerMain" />
+        <activity android:name=".Delevery.DeleveryRegister" />
+        <activity android:name=".Delevery.DeleveyLogin" />
+        <activity android:name=".customerPages.CustomerRegister" />
+        <activity android:name=".customerPages.Customer_Login">
+        </activity>
+        <activity android:name=".MainActivity"></activity>
+    </application>
+
+</manifest>
