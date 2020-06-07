@@ -45,6 +45,12 @@ dependencies {
 
     //dexter
     implementation 'com.karumi:dexter:6.1.2'
+    implementation 'com.google.firebase:firebase-messaging:20.2.0'
+
+    //notification
+
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
 
 
 }

@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">FlashD</string>
 
     <string-array name="status">
@@ -8,6 +8,9 @@
         <item>Drop To End Location</item>
     </string-array>
 
+    <string name="NEWS_CHANNEL_ID" tools:ignore="ExtraTranslation">welcome</string>
+    <string name="CHANNEL_NEWS">WelcomeNote</string>
+    <string name="CHANNEL_DESCRIPTION">it is welcome note to notify user with details</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

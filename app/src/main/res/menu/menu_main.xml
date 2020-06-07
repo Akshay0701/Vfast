@@ -12,13 +12,7 @@
         app:showAsAction="always"
         ></item>
 
-    <item
-        android:id="@+id/action_chat"
-        app:showAsAction="always"
-        android:title="Chat"
-        android:icon="@drawable/ic_chat">
 
-    </item>
 
     <item
         android:id="@+id/action_new_order"
@@ -31,12 +25,6 @@
         android:id="@+id/action_profile"
         android:icon="@drawable/ic_contact"
         android:title="Profile"
-        app:showAsAction="always"
-        ></item>
-    <item
-        android:id="@+id/action_info"
-        android:icon="@drawable/ic_info"
-        android:title="Info"
         app:showAsAction="always"
         ></item>
 </menu>

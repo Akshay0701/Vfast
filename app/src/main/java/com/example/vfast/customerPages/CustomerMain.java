@@ -8,9 +8,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import me.ibrahimsn.lib.OnItemSelectedListener;
 import me.ibrahimsn.lib.SmoothBottomBar;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.BitmapFactory;
+import android.media.AudioAttributes;
+import android.media.RingtoneManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.MenuItem;
@@ -29,6 +35,9 @@ import com.example.vfast.customerFragments.ChatFragment;
 import com.example.vfast.customerFragments.InfoFragment;
 import com.example.vfast.customerFragments.OrderFragment;
 import com.example.vfast.customerFragments.ProfileFragment;
+import com.example.vfast.notifications.Token;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -38,6 +47,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,6 +56,10 @@ import java.util.List;
 public class CustomerMain extends AppCompatActivity {
 
     Button addOrder;
+
+    //notification
+    private static final String ID="some_id";
+    private static final String NAME="FirebaseAPP";
 
     FirebaseAuth firebaseAuth;
     String mUID;
@@ -58,7 +73,7 @@ public class CustomerMain extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_main);
         smoothBottomBar=findViewById(R.id.bottomBar);
-
+        checkforuserlogin();
 
        // actionBar.setTitle("Home");
     //    actionBar.setTitle(Html.fromHtml("<font color='#43B54A'>Home </font>"));
@@ -78,13 +93,6 @@ public class CustomerMain extends AppCompatActivity {
                         //currentpos=0;
                         ft1.commit();
                         return true;
-                    case R.id.action_chat:
-                        ChatFragment fragment2=new ChatFragment();
-                        FragmentTransaction ft2=getSupportFragmentManager().beginTransaction();
-                        ft2.replace(R.id.content1,fragment2,"");
-                        //currentpos=0;
-                        ft2.commit();
-                        return true;
                     case R.id.action_new_order:
                         startActivity(new Intent(CustomerMain.this,AddOrder.class));
                         return true;
@@ -95,22 +103,81 @@ public class CustomerMain extends AppCompatActivity {
                         //currentpos=0;
                         ft4.commit();
                         return true;
-                    case R.id.action_info:
-                        InfoFragment fragment3=new InfoFragment();
-                        FragmentTransaction ft3=getSupportFragmentManager().beginTransaction();
-                        ft3.replace(R.id.content1,fragment3,"");
-                        //currentpos=0;
-                        ft3.commit();
-                        return true;
                 }
                 return false;
             }
         });
-
+        createNotificationChannel();
     }
 
 
 
+    private void createNotificationChannel() {
+        Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+
+        //setting user to particular category
+        FirebaseMessaging.getInstance().subscribeToTopic("nonuser")
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        String msg = "Done";
+                        if (!task.isSuccessful()) {
+                            msg = "Error";
+                        }
+                        Toast.makeText(CustomerMain.this, msg, Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+
+            NotificationChannel notificationChannel = new NotificationChannel(ID
+                    ,NAME, NotificationManager.IMPORTANCE_HIGH);
+            notificationChannel.setDescription(getString(R.string.CHANNEL_DESCRIPTION));
+            notificationChannel.setShowBadge(true);
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+
+
+            if (defaultSoundUri != null) {
+                AudioAttributes att = new AudioAttributes.Builder()
+                        .setUsage(AudioAttributes.USAGE_NOTIFICATION)
+                        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                        .build();
+                notificationChannel.setSound(defaultSoundUri, att);
+            }
+
+            notificationManager.createNotificationChannel(notificationChannel);
+
+
+
+            Toast.makeText(this, "created", Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void updateToken(String token){
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Tokens");
+        Token mToken=new Token(token);
+        ref.child(mUID).setValue(mToken);
+    }
+    public void checkforuserlogin() {
+        firebaseAuth= FirebaseAuth.getInstance();
+        user = firebaseAuth.getCurrentUser();
+        if (user != null) {
+
+            mUID=user.getUid();
+            SharedPreferences sp=getSharedPreferences("SP_User",MODE_PRIVATE);
+            SharedPreferences.Editor editor=sp.edit();
+            editor.putString("Current_DELEVERYID",mUID);
+            editor.apply();
+            //noinspection deprecation
+            updateToken(FirebaseInstanceId.getInstance().getToken());
+            //updatetoken
+            //noinspection deprecation
+
+        }
+        else{
+            startActivity(new Intent(CustomerMain.this,Customer_Login.class));
+            finish();
+        }
+    }
 
 
 
