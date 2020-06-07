@@ -10,6 +10,8 @@ import android.content.ContextWrapper;
 import android.net.Uri;
 import android.os.Build;
 
+import com.example.vfast.R;
+
 import androidx.annotation.RequiresApi;
 
 public class OreoAndAboveNotification extends ContextWrapper {
@@ -68,7 +70,7 @@ public class OreoAndAboveNotification extends ContextWrapper {
                 .setContentText(body)
                 .setSound(soundUri)
                 .setAutoCancel(true)
-                .setSmallIcon(Integer.parseInt(icon));
+                .setSmallIcon(R.drawable.ic_delete_order);
     }
 
 

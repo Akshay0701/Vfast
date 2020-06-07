@@ -109,6 +109,9 @@ public class AdapterOrders  extends RecyclerView.Adapter<AdapterOrders.MyHolder>
                 holder.acceptOrderBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+
+
+
                         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Order");
                         ref.child(orderlist.get(i).getProductKey()).child("Status").setValue("0");//now deleboy can see orders
                        // context.startActivity(new Intent(context, CustomerMain.class));
@@ -244,4 +247,7 @@ public class AdapterOrders  extends RecyclerView.Adapter<AdapterOrders.MyHolder>
 
 
     }
+
+
+
 }

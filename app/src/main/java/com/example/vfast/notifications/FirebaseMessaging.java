@@ -12,6 +12,8 @@ import android.os.Build;
 import android.os.Bundle;
 
 import com.example.vfast.MainActivity;
+import com.example.vfast.R;
+import com.example.vfast.customerPages.Customer_Login;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.messaging.FirebaseMessagingService;
@@ -24,10 +26,6 @@ import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 
 import static android.app.PendingIntent.FLAG_ONE_SHOT;
-import static android.content.Context.MODE_PRIVATE;
-
-;
-;
 
 public class FirebaseMessaging extends FirebaseMessagingService {
 
@@ -84,7 +82,7 @@ int i=0;
 
         Uri DefSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
-                .setSmallIcon(Integer.parseInt(Objects.requireNonNull(icon)))
+                .setSmallIcon(R.drawable.ic_delete_order)
                 .setContentText(body)
                 .setContentTitle(title)
                 .setAutoCancel(true)
@@ -131,7 +129,7 @@ int i=0;
                 DefSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
                notification1=new OreoAndAboveNotification(this);
-                 builder=notification1.getONotifications(title,body,pIntent,DefSoundUri,icon);
+                 builder=notification1.getONotifications(title,body,pIntent,DefSoundUri,"R.drawable.ic_delete_order");
 
                  j=0;
                 if(i>0){
@@ -142,7 +140,7 @@ int i=0;
             default:
                 notification=remoteMessage.getNotification();
                 i= Integer.parseInt(user.replaceAll("[\\D]",""));
-                 intent=new Intent(this, MainActivity.class);
+                 intent=new Intent(this, Customer_Login.class);
                  bundle=new Bundle();
                 bundle.putString("hisUID",user);
                 intent.putExtras(bundle);
@@ -152,7 +150,7 @@ int i=0;
                 DefSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
                  notification1=new OreoAndAboveNotification(this);
-                 builder=notification1.getONotifications(title,body,pIntent,DefSoundUri,icon);
+                 builder=notification1.getONotifications(title,body,pIntent,DefSoundUri,"R.drawable.ic_delete_order");
 
                  j=0;
                 if(i>0){

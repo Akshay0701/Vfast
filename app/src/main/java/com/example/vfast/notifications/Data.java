@@ -3,18 +3,16 @@ package com.example.vfast.notifications;
 public class Data {
 
     private String user,body,title,sent,type;
-    private Integer icon;
 
     public Data(){
     }
 
-    public Data(String user, String body, String title, String sent, String type, Integer icon) {
+    public Data(String user, String body, String title, String sent, String type) {
         this.user = user;
         this.body = body;
         this.title = title;
         this.sent = sent;
         this.type = type;
-        this.icon = icon;
     }
 
     public String getType() {
@@ -55,13 +53,5 @@ public class Data {
 
     public void setSent(String sent) {
         this.sent = sent;
-    }
-
-    public Integer getIcon() {
-        return icon;
-    }
-
-    public void setIcon(Integer icon) {
-        this.icon = icon;
     }
 }
