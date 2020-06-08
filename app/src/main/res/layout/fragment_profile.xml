@@ -70,9 +70,10 @@
         android:background="@color/lightback"
         android:layout_height="1dp"></View>
     <TextView
+        android:id="@+id/logout"
         android:layout_width="match_parent"
-        android:text="Refer And Earn"
-        android:drawableStart="@drawable/ic_money"
+        android:text="Logout"
+        android:drawableStart="@drawable/ic_cancel_order"
         android:padding="18dp"
         android:textColor="@color/colorPrimary"
         android:drawablePadding="10dp"

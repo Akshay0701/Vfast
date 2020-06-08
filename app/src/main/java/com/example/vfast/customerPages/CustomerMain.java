@@ -93,6 +93,13 @@ public class CustomerMain extends AppCompatActivity {
                         //currentpos=0;
                         ft1.commit();
                         return true;
+                    case R.id.action_CustomerCare :
+                        ChatFragment fragment5=new ChatFragment();
+                        FragmentTransaction ft5=getSupportFragmentManager().beginTransaction();
+                        ft5.replace(R.id.content1,fragment5,"");
+                        //currentpos=0;
+                        ft5.commit();
+                        return true;
                     case R.id.action_new_order:
                         startActivity(new Intent(CustomerMain.this,AddOrder.class));
                         return true;

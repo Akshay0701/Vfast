@@ -42,7 +42,6 @@
                 android:textColor="@color/colorPrimary"
                 android:textStyle="bold"
                 android:textSize="22dp"
-
                 />
             <TextView
                 android:id="@+id/pricetxt"

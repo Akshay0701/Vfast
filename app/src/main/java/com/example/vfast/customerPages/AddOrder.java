@@ -155,33 +155,31 @@ public class AddOrder extends AppCompatActivity  {
                 endphone=end_phone_id.getText().toString();
 
                 if (!Patterns.PHONE.matcher(phone).matches()){
-                    phone_id.setError("Invalided Phone No");
+                    phone_id.setError("Invalid Phone No");
                     phone_id.setFocusable(true);
                    // Toast.makeText(CustomerRegister.this, "Fill All Details", Toast.LENGTH_SHORT).show();
                 }
                 else if(!Patterns.PHONE.matcher(endphone).matches()){
-                    end_phone_id.setError("Password length at least 6 characters");
-
+                    end_phone_id.setError("Invalid Phone No");
                     //Toast.makeText(CustomerRegister.this, "Fill All Details", Toast.LENGTH_SHORT).show();
                     end_phone_id.setFocusable(true);
                 }
                 else if(pickup.equals("")){
-                    pickup_address_id.setError("please fill");
+                    pickup_address_id.setError("Please Fill Address");
                     pickup_address_id.setFocusable(true);
                 }
                 else if(endup.equals("")){
-                    end_address_id.setError("please fill");
+                    end_address_id.setError("Please Fill Address");
                     end_address_id.setFocusable(true);
                 }
                 else if(weightst.equals("")){
-                    weight.setError("please fill");
+                    weight.setError("Please Fill Weight");
 
                    // Toast.makeText(CustomerRegister.this, "Fill All Details", Toast.LENGTH_SHORT).show();
                     weight.setFocusable(true);
                 }
                 else if(products.equals("")){
-                    product.setError("please fill");
-
+                    product.setError("Please Fill Product Name");
                    // Toast.makeText(CustomerRegister.this, "Fill All Details", Toast.LENGTH_SHORT).show();
                     product.setFocusable(true);
                 }

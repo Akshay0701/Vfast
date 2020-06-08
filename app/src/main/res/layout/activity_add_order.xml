@@ -51,7 +51,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/Unametv"
-                                android:text="Pakage "
+                                android:text=""
                                 android:textColor="@color/colorPrimary"
                                 android:textStyle="bold"
                                 android:textSize="22dp"
@@ -97,7 +97,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="Pick Up Address"
+                                    android:text="Pick Up Point "
                                     android:textColor="@color/colorPrimary"
                                     android:textStyle="bold"
                                     android:textSize="18dp"
@@ -107,7 +107,7 @@
                                     android:layout_width="150dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="0dp"
-                                    android:text="Cecilia Chapman \n 711-2880 Nulla St.\nMankato Mississippi\n 96522(257) 563-7401"
+                                    android:hint="Address"
                                     android:textColor="@color/colorDark"
                                     android:textSize="15dp"
                                     />
@@ -116,9 +116,9 @@
                                     android:layout_height="wrap_content">
                                     <TextView
                                         android:layout_width="wrap_content"
-                                        android:text="PickUp No :"
+                                        android:text="Phone No :"
                                         android:layout_marginTop="10dp"
-                                        android:textSize="17dp"
+                                        android:textSize="15dp"
                                         android:textColor="@color/colorPrimary"
                                         android:textStyle="bold"
                                         android:textAlignment="center"
@@ -127,7 +127,7 @@
                                     <EditText
                                         android:id="@+id/pickup_phone_txt"
                                         android:layout_width="wrap_content"
-                                        android:text="9086045452"
+                                        android:hint="9086045452"
                                         android:layout_marginTop="10dp"
                                         android:textSize="17dp"
                                         android:textAlignment="center"
@@ -165,7 +165,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="End Up Address"
+                                    android:text="Delivery Point "
                                     android:textAlignment="textStart"
                                     android:textColor="@color/colorPrimary"
                                     android:textStyle="bold"
@@ -176,10 +176,7 @@
                                     android:layout_width="150dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="0dp"
-                                    android:text="Cecilia Chapman
-711-2880 Nulla St.
-Mankato Mississippi 96522
-(257) 563-7401"
+                                    android:hint="Address"
                                     android:textAlignment="textStart"
                                     android:textColor="@color/colorDark"
                                     android:textSize="15dp"
@@ -189,7 +186,7 @@ Mankato Mississippi 96522
                                     android:layout_height="wrap_content">
                                     <TextView
                                         android:layout_width="wrap_content"
-                                        android:text="EndUp No :"
+                                        android:text="Phone No :"
                                         android:layout_marginTop="10dp"
                                         android:textSize="17dp"
                                         android:textColor="@color/colorPrimary"
@@ -200,7 +197,7 @@ Mankato Mississippi 96522
                                     <EditText
                                         android:id="@+id/end_phone_txt"
                                         android:layout_width="wrap_content"
-                                        android:text="90860032"
+                                        android:hint="9320302403"
                                         android:layout_marginTop="10dp"
                                         android:textSize="17dp"
                                         android:textAlignment="center"

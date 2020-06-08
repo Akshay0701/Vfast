@@ -1,11 +1,13 @@
 package com.example.vfast.customerFragments;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +16,7 @@ import android.widget.TextView;
 import com.example.vfast.MainActivity;
 import com.example.vfast.Model.ModelUser;
 import com.example.vfast.R;
+import com.example.vfast.customerPages.Customer_Login;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -33,8 +36,7 @@ public class ProfileFragment extends Fragment {
     String mUID;
     FirebaseUser user;
 
-    TextView Unametv,phonetv;
-
+    TextView Unametv,phonetv,logout;
     public ProfileFragment() {
         // Required empty public constructor
     }
@@ -46,7 +48,20 @@ public class ProfileFragment extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_profile, container, false);
         phonetv=view.findViewById(R.id.phonetv);
+        logout=view.findViewById(R.id.logout);
         Unametv=view.findViewById(R.id.Unametv);
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                SharedPreferences.Editor editor;
+                editor= PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
+                editor.remove("username");
+                editor.remove("password");
+                startActivity(new Intent(getContext(), Customer_Login.class));
+            }
+        });
         checkforuserlogin();
         return view;
     }

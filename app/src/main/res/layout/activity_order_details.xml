@@ -88,7 +88,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Pick Up Address"
+                            android:text="Pick Up Point"
                             android:textColor="@color/colorPrimary"
                             android:textStyle="bold"
                             android:textSize="18dp"
@@ -98,7 +98,7 @@
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="Cecilia Chapman \n 711-2880 Nulla St.\nMankato Mississippi\n 96522(257) 563-7401"
+                            android:text="Address"
                             android:textColor="@color/colorDark"
                             android:textSize="15dp"
                             />
@@ -107,7 +107,7 @@
                             android:layout_height="wrap_content">
                             <TextView
                                 android:layout_width="wrap_content"
-                                android:text="PickUp PhoneNo :"
+                                android:text="Phone No :"
                                 android:layout_marginTop="10dp"
                                 android:textSize="17dp"
                                 android:textColor="@color/colorPrimary"
@@ -140,7 +140,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="End Up Address"
+                            android:text="Delivery Point "
                             android:textAlignment="textStart"
                             android:textColor="@color/colorPrimary"
                             android:textStyle="bold"
@@ -164,7 +164,7 @@ Mankato Mississippi 96522
                             android:layout_height="wrap_content">
                             <TextView
                                 android:layout_width="wrap_content"
-                                android:text="Drop Point PhoneNo :"
+                                android:text="Phone No:"
                                 android:layout_marginTop="10dp"
                                 android:textSize="17dp"
                                 android:textColor="@color/colorPrimary"
@@ -303,16 +303,17 @@ Mankato Mississippi 96522
                     android:background="@color/colorAccent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="60dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_gravity="center_vertical"
-                        android:foregroundGravity="center_vertical"
-                        android:layout_marginBottom="10dp"
                         android:layout_height="60dp"
-                        android:src="@drawable/delvieryboyicon"
-                        />
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:foregroundGravity="center_vertical"
+                        android:src="@drawable/delvieryboyicon" />
+
                     <LinearLayout
                         android:layout_marginLeft="13dp"
                         android:layout_gravity="center_vertical"

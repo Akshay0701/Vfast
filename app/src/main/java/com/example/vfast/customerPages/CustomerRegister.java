@@ -39,7 +39,7 @@ public class CustomerRegister extends AppCompatActivity {
     SharedPreferences.Editor editor;
     EditText mEmailtext,mpasswordtext,nameEt,phoneEt,confirm_passwordEt;
     TextView malreadytext;
-    ImageView bregister;
+    Button bregister;
 
     ProgressDialog progressDialog;
     private FirebaseAuth mAuth;
@@ -85,26 +85,27 @@ public class CustomerRegister extends AppCompatActivity {
 
 
                 if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-                    mEmailtext.setError("Invalided Email");
+                    mEmailtext.setError("Invalid Email");
                     mEmailtext.setFocusable(true);
                     Toast.makeText(CustomerRegister.this, "Fill All Details", Toast.LENGTH_SHORT).show();
                 }
-                else if(password.length()<6&&confirm_password.equals(password)){
+                else if(password.length()<6){
                     mpasswordtext.setError("Password length at least 6 characters");
-
-                    Toast.makeText(CustomerRegister.this, "Fill All Details", Toast.LENGTH_SHORT).show();
                     mpasswordtext.setFocusable(true);
+                }
+                else if(confirm_password.equals(password)){
+                    mpasswordtext.setError("Password Doesn't Match");
                 }
                 else if(name.length()>15){
                     nameEt.setError("Name length should less than 15 characters");
 
-                    Toast.makeText(CustomerRegister.this, "Fill All Details", Toast.LENGTH_SHORT).show();
+                 //   Toast.makeText(CustomerRegister.this, "Fill All Details", Toast.LENGTH_SHORT).show();
                     nameEt.setFocusable(true);
                 }
                 else if(phone.length()<10){
-                    phoneEt.setError("Password length at least 6 characters");
+                    phoneEt.setError("Invalid Phone No");
 
-                    Toast.makeText(CustomerRegister.this, "Fill All Details", Toast.LENGTH_SHORT).show();
+            //        Toast.makeText(CustomerRegister.this, "Fill All Details", Toast.LENGTH_SHORT).show();
                     phoneEt.setFocusable(true);
                 }
                 else {

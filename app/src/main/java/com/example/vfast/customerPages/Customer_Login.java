@@ -35,7 +35,7 @@ public class Customer_Login extends AppCompatActivity {
 
 
     EditText log_emailEt,log_passwordEt;
-    ImageView login_submit;
+    Button login_submit;
     TextView recover_pass,not_already_account;
 
     ProgressDialog progressDialog;

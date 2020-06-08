@@ -49,7 +49,7 @@ public class AdapterOrders  extends RecyclerView.Adapter<AdapterOrders.MyHolder>
 
         holder.pickup_address_id.setText(orderlist.get(i).getPickUp_Address());
         holder.endup_address_id.setText(orderlist.get(i).getEndUp_Address());
-        holder.pricetxt.setText("Price:"+orderlist.get(i).getProductPrice()+"$");
+        holder.pricetxt.setText("Price:"+orderlist.get(i).getProductPrice()+"₹");
         holder.weighttxt.setText("Weight : "+orderlist.get(i).getProductWeight());
         holder.producttxt.setText("Product : "+orderlist.get(i).getProduct());
         holder.Unametv.setText(orderlist.get(i).getUser_Name());
@@ -76,7 +76,7 @@ public class AdapterOrders  extends RecyclerView.Adapter<AdapterOrders.MyHolder>
             if (!price.equals("0")&&status.equals("-1")){
                 holder.linear1.setVisibility(View.VISIBLE);
                 holder.adminDeciTxt.setVisibility(View.GONE);
-                holder.pricetxt2.setText("Price :"+orderlist.get(i).getProductPrice());
+                holder.pricetxt2.setText("Price :"+orderlist.get(i).getProductPrice()+"₹");
 
                 //setting listner
                 holder.cancelOrderBtn.setOnClickListener(new View.OnClickListener() {
