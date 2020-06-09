@@ -116,23 +116,23 @@ public class OrderDetails extends AppCompatActivity implements AdapterView.OnIte
                 for (DataSnapshot ds:dataSnapshot.getChildren()){
                     modelOrders =ds.getValue(ModelOrders.class);
                     String status=modelOrders.getStatus();
-
+                    producttxt.setText("Products :"+modelOrders.getProduct());
                     Unametv.setText(modelOrders.getUser_Name());
                     pickup_address_id.setText(modelOrders.getPickUp_Address());
                     endup_address_id.setText(modelOrders.getEndUp_Address());
                     pickup_phone_txt.setText(modelOrders.getPickUp_phone());
-                    weighttxt.setText(modelOrders.getProductWeight());
+                    weighttxt.setText("Weight :"+modelOrders.getProductWeight());
                     end_phone_txt.setText(modelOrders.getEndAddPhone());
                     //.setText(modelOrders.getAllocated_DeleID());
                     if (!modelOrders.getProductPrice().equals("0")){
-                        pricetxt.setText("Price :"+modelOrders.getProductPrice()+"$");
+                        pricetxt.setText("Price :"+modelOrders.getProductPrice()+"₹");
                     }else{
                         pricetxt.setText("Price Not Decided Yet");
                     }
 
                     //checking status of product
                     if (status.equals("0")){
-                        statustxt.setText("Searching For Delvery Boy");
+                        statustxt.setText("Searching For Delivery Boy");
                     }
                     else if(status.equals("1")){
                         statustxt.setText("On The Way");
@@ -171,7 +171,7 @@ public class OrderDetails extends AppCompatActivity implements AdapterView.OnIte
                             }
                         });
                     }else{
-                        isDeleAllocatedTxt.setText("****Sreaching For Delivery Boy****");
+                        isDeleAllocatedTxt.setText("****Searching For Delivery Boy****");
                         deleLinear.setVisibility(View.GONE);
                         //do nothing
                     }

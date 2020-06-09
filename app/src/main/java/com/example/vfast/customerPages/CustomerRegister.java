@@ -93,10 +93,10 @@ public class CustomerRegister extends AppCompatActivity {
                     mpasswordtext.setError("Password length at least 6 characters");
                     mpasswordtext.setFocusable(true);
                 }
-                else if(confirm_password.equals(password)){
+                else if(!confirm_password.equals(password)){
                     mpasswordtext.setError("Password Doesn't Match");
                 }
-                else if(name.length()>15){
+                else if(name.length()<15){
                     nameEt.setError("Name length should less than 15 characters");
 
                  //   Toast.makeText(CustomerRegister.this, "Fill All Details", Toast.LENGTH_SHORT).show();

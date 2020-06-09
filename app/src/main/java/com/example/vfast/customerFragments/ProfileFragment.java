@@ -40,8 +40,6 @@ public class ProfileFragment extends Fragment {
     public ProfileFragment() {
         // Required empty public constructor
     }
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -59,13 +57,13 @@ public class ProfileFragment extends Fragment {
                 editor= PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
                 editor.remove("username");
                 editor.remove("password");
+                editor.apply();
                 startActivity(new Intent(getContext(), Customer_Login.class));
             }
         });
         checkforuserlogin();
         return view;
     }
-
     public void checkforuserlogin() {
         firebaseAuth= FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
