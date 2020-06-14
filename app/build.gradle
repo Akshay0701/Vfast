@@ -51,6 +51,18 @@ dependencies {
 
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
+    //edit text
+
+    implementation 'com.rengwuxian.materialedittext:library:2.1.4'
+
+    //pdf reader
+    compile 'com.github.barteksc:android-pdf-viewer:2.0.3'
+
+    //place picker
+    // Places library
+    implementation 'com.google.android.libraries.places:places:2.0.0'
+    // PING Place Picker
+    implementation 'com.github.rtchagas:pingplacepicker:2.0.3'
 
 
 }

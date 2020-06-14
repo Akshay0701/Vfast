@@ -1,10 +1,10 @@
 package com.example.vfast.Model;
 
 public class ModelOrders {
-    String User_Name,PickUp_Address,EndUp_Address, PickUp_phone,EndAddPhone,ProductWeight, uid, User_Email, Product, ProductKey,Status,Allocated_DeleID,ProductPrice,DeleComment;
+    String User_Name,PickUp_Address,EndUp_Address, PickUp_phone,EndAddPhone,ProductWeight, uid, User_Email, Product, ProductKey,Status,Allocated_DeleID,ProductPrice,DeleComment,PickUpDate,PickUpTime,PickUpComment,EndUpDate,EndUpTime,EndUpComment;
 
 
-    public ModelOrders(String user_Name, String pickUp_Address, String endUp_Address, String pickUp_phone, String endAddPhone, String productWeight, String uid, String user_Email, String product, String productKey, String status, String allocated_DeleID, String productPrice, String deleComment) {
+    public ModelOrders(String user_Name, String pickUp_Address, String endUp_Address, String pickUp_phone, String endAddPhone, String productWeight, String uid, String user_Email, String product, String productKey, String status, String allocated_DeleID, String productPrice, String deleComment, String pickUpDate, String pickUpTime, String pickUpComment, String endUpDate, String endUpTime, String endUpComment) {
         User_Name = user_Name;
         PickUp_Address = pickUp_Address;
         EndUp_Address = endUp_Address;
@@ -19,6 +19,60 @@ public class ModelOrders {
         Allocated_DeleID = allocated_DeleID;
         ProductPrice = productPrice;
         DeleComment = deleComment;
+        PickUpDate = pickUpDate;
+        PickUpTime = pickUpTime;
+        PickUpComment = pickUpComment;
+        EndUpDate = endUpDate;
+        EndUpTime = endUpTime;
+        EndUpComment = endUpComment;
+    }
+
+    public String getPickUpDate() {
+        return PickUpDate;
+    }
+
+    public void setPickUpDate(String pickUpDate) {
+        PickUpDate = pickUpDate;
+    }
+
+    public String getPickUpTime() {
+        return PickUpTime;
+    }
+
+    public void setPickUpTime(String pickUpTime) {
+        PickUpTime = pickUpTime;
+    }
+
+    public String getPickUpComment() {
+        return PickUpComment;
+    }
+
+    public void setPickUpComment(String pickUpComment) {
+        PickUpComment = pickUpComment;
+    }
+
+    public String getEndUpDate() {
+        return EndUpDate;
+    }
+
+    public void setEndUpDate(String endUpDate) {
+        EndUpDate = endUpDate;
+    }
+
+    public String getEndUpTime() {
+        return EndUpTime;
+    }
+
+    public void setEndUpTime(String endUpTime) {
+        EndUpTime = endUpTime;
+    }
+
+    public String getEndUpComment() {
+        return EndUpComment;
+    }
+
+    public void setEndUpComment(String endUpComment) {
+        EndUpComment = endUpComment;
     }
 
     public String getDeleComment() {

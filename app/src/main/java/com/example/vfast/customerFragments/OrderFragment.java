@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.vfast.Adapter.AdapterOrders;
@@ -40,7 +41,7 @@ public class OrderFragment extends Fragment {
 
 
 
-    Button addOrder;
+    ImageView addOrder;
 
     FirebaseAuth firebaseAuth;
     String mUID;

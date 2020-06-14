@@ -1,27 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".customerFragments.OrderFragment">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="match_parent"
+        android:src="@drawable/banner"
+        android:layout_height="wrap_content"></ImageView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:weightSum="2"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/addOrder"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="-22dp"
+            android:layout_weight="1"
+            android:src="@drawable/neworderbtn"
+            android:layout_height="wrap_content"></ImageView>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_marginRight="-20dp"
+            android:layout_weight="1"
+            android:src="@drawable/myorder"
+            android:layout_height="wrap_content"></ImageView>
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/addOrder"
-        android:layout_width="160dp"
-        android:text="Add Order"
-        android:background="@drawable/editboxdesign1"
-        android:padding="20dp"
-        android:textStyle="bold"
-        android:textSize="16dp"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/colorAccent"
-        android:layout_margin="10dp"
-        android:layout_height="60dp"></Button>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_myOrder"
         android:layout_marginTop="10dp"
         android:paddingTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="-15dp"
+        android:src="@drawable/fddesign2"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content"></ImageView>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_gravity="right"
+        android:src="@drawable/havingissue"
+        android:layout_marginRight="-15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content"></ImageView>
+    <ImageView
+        android:layout_width="match_parent"
+        android:src="@drawable/fotter"
+        android:layout_marginLeft="-10dp"
+        android:layout_marginRight="-40dp"
+        android:layout_marginBottom="-40dp"
+        android:layout_height="wrap_content"></ImageView>
 
-</RelativeLayout>
+</LinearLayout>
+</ScrollView>

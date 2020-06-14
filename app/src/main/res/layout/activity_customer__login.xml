@@ -62,16 +62,11 @@
            <TextView
                android:id="@+id/recover_pass"
                android:layout_width="wrap_content"
+               android:layout_weight="1"
                android:layout_marginLeft="20dp"
-               android:text="Recover Password.."
-               android:textColor="@color/colorAccent"
-               android:layout_height="wrap_content"></TextView>
-           <TextView
-               android:id="@+id/not_already_account"
-               android:layout_width="match_parent"
-               android:layout_marginRight="5dp"
-               android:textAlignment="textEnd"
-               android:text="Not Already Register ?"
+               android:layout_gravity="center_horizontal"
+               android:gravity="center_horizontal"
+               android:text="Recover Password"
                android:textColor="@color/colorAccent"
                android:layout_height="wrap_content"></TextView>
        </LinearLayout>
@@ -82,19 +77,32 @@
         android:layout_width="wrap_content"
         android:background="@drawable/buttondesign2"
         android:layout_below="@+id/linear1"
-        android:text="Login"
+        android:text="Sign In"
         android:textColor="@color/colorAccent"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="0dp"
         android:layout_height="wrap_content"></Button>
-
-<ImageView
-    android:layout_width="wrap_content"
-    android:src="@drawable/design1"
-    android:layout_alignParentBottom="true"
-    android:layout_marginLeft="-290dp"
-    android:layout_marginBottom="-390dp"
-    android:layout_height="wrap_content"></ImageView>
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="New user? Sign up"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/login_submit"
+        android:textColor="@color/colorPrimary"
+        android:layout_height="wrap_content"></TextView>
+    <Button
+        android:id="@+id/not_already_account"
+        android:layout_width="wrap_content"
+        android:background="@drawable/buttondesign2"
+        android:layout_below="@+id/text"
+        android:text="Sign up"
+        android:textColor="@color/colorAccent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"></Button>
 
 
 

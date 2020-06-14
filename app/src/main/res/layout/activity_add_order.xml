@@ -87,12 +87,12 @@
                             <ImageView
                                 android:layout_width="30dp"
                                 android:src="@drawable/onepoint"
-                                android:layout_height="match_parent"></ImageView>
+                                android:layout_height="wrap_content"></ImageView>
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:orientation="vertical"
                                 android:layout_weight="1"
-                                android:padding="10dp"
+                                android:padding="20dp"
                                 android:layout_height="wrap_content">
                                 <TextView
                                     android:layout_width="match_parent"
@@ -102,37 +102,50 @@
                                     android:textStyle="bold"
                                     android:textSize="18dp"
                                     />
-                                <EditText
-                                    android:id="@+id/pickup_address_id"
-                                    android:layout_width="150dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="0dp"
-                                    android:hint="Address"
-                                    android:textColor="@color/colorDark"
-                                    android:textSize="15dp"
-                                    />
                                 <LinearLayout
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
+                                    android:layout_weight="2"
                                     android:layout_height="wrap_content">
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:text="Phone No :"
-                                        android:layout_marginTop="10dp"
-                                        android:textSize="15dp"
-                                        android:textColor="@color/colorPrimary"
-                                        android:textStyle="bold"
-                                        android:textAlignment="center"
+
+                                    <com.rengwuxian.materialedittext.MaterialEditText
+                                        android:id="@+id/pickup_address_id"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
                                         android:layout_weight="1"
-                                        android:layout_height="wrap_content"></TextView>
-                                    <EditText
+                                        android:hint="Address "
+                                        app:met_textColorHint="@color/lightdark"
+                                        android:textColor="@color/colorDark"
+                                        app:met_baseColor="@color/colorDark"
+                                        app:met_floatingLabel="highlight"
+                                        app:met_primaryColor="@color/colorPrimary"
+                                        app:met_singleLineEllipsis="true"
+                                        />
+                                    <ImageView
+                                        android:id="@+id/pickup_lcoation"
+                                        android:layout_width="30dp"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_gravity="center_vertical"
+                                        android:src="@drawable/ic_location"
+                                        android:layout_height="30dp"></ImageView>
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_weight="2"
+                                    android:layout_height="wrap_content">
+                                    <com.rengwuxian.materialedittext.MaterialEditText
                                         android:id="@+id/pickup_phone_txt"
-                                        android:layout_width="wrap_content"
-                                        android:hint="9086045452"
-                                        android:layout_marginTop="10dp"
-                                        android:textSize="17dp"
-                                        android:textAlignment="center"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
                                         android:layout_weight="1"
-                                        android:layout_height="wrap_content"></EditText>
+                                        android:hint="Phone Number "
+                                        app:met_textColorHint="@color/lightdark"
+                                        android:textColor="@color/colorDark"
+                                        app:met_baseColor="@color/colorDark"
+                                        app:met_floatingLabel="highlight"
+                                        app:met_primaryColor="@color/colorPrimary"
+                                        app:met_singleLineEllipsis="true"
+                                        />
                                     <ImageView
                                         android:id="@+id/pickup_contact"
                                         android:layout_width="30dp"
@@ -142,6 +155,65 @@
                                         android:src="@drawable/ic_contact"
                                         android:layout_height="30dp"></ImageView>
                                 </LinearLayout>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_marginTop="10dp"
+                                    android:textColor="@color/colorDark"
+                                    android:text="When to arrive at this location"
+                                    android:layout_height="wrap_content"></TextView>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:weightSum="2"
+                                    android:orientation="horizontal"
+                                    android:layout_height="wrap_content">
+
+                                    <com.rengwuxian.materialedittext.MaterialEditText
+                                        android:id="@+id/pickup_date_id"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:layout_weight="1"
+                                        android:hint="Date :"
+                                        app:met_textColorHint="@color/lightdark"
+                                        android:textColor="@color/colorDark"
+                                        android:drawableEnd="@drawable/ic_date"
+                                        app:met_baseColor="@color/colorDark"
+                                        app:met_floatingLabel="highlight"
+                                        android:drawablePadding="5dp"
+                                        app:met_primaryColor="@color/colorPrimary"
+                                        app:met_singleLineEllipsis="true"
+                                        />
+
+                                    <com.rengwuxian.materialedittext.MaterialEditText
+                                        android:id="@+id/pickup_time_id"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:hint="Time:"
+                                        android:layout_weight="1"
+                                        android:layout_marginLeft="10dp"
+                                        android:drawableEnd="@drawable/ic_time"
+                                        app:met_textColorHint="@color/lightdark"
+                                        android:textColor="@color/colorDark"
+                                        app:met_baseColor="@color/colorDark"
+                                        app:met_floatingLabel="highlight"
+                                        app:met_primaryColor="@color/colorPrimary"
+                                        app:met_singleLineEllipsis="true"
+                                        />
+                                </LinearLayout>
+
+                                <com.rengwuxian.materialedittext.MaterialEditText
+                                    android:id="@+id/pickup_comment"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="match_parent"
+                                    android:layout_weight="1"
+                                    android:hint="Comment :"
+                                    app:met_textColorHint="@color/lightdark"
+                                    android:textColor="@color/colorDark"
+                                    app:met_baseColor="@color/colorDark"
+                                    app:met_floatingLabel="highlight"
+                                    app:met_primaryColor="@color/colorPrimary"
+                                    app:met_singleLineEllipsis="true"
+                                    />
+
                             </LinearLayout>
                         </LinearLayout>
 
@@ -151,16 +223,17 @@
                             android:background="@color/lightdark"></View>
                         <LinearLayout
                             android:layout_width="match_parent"
+                            android:layout_marginTop="10dp"
                             android:layout_height="wrap_content">
                             <ImageView
                                 android:layout_width="30dp"
                                 android:src="@drawable/twopoint"
-                                android:layout_height="match_parent"></ImageView>
+                                android:layout_height="wrap_content"></ImageView>
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:orientation="vertical"
                                 android:layout_weight="1"
-                                android:padding="10dp"
+                                android:padding="20dp"
                                 android:layout_height="wrap_content">
                                 <TextView
                                     android:layout_width="match_parent"
@@ -171,38 +244,35 @@
                                     android:textStyle="bold"
                                     android:textSize="18dp"
                                     />
-                                <EditText
+                                <com.rengwuxian.materialedittext.MaterialEditText
                                     android:id="@+id/endup_address_id"
-                                    android:layout_width="150dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="0dp"
-                                    android:hint="Address"
-                                    android:textAlignment="textStart"
+                                    android:layout_width="match_parent"
+                                    android:layout_weight="1"
+                                    android:hint="Address "
+                                    app:met_textColorHint="@color/lightdark"
                                     android:textColor="@color/colorDark"
-                                    android:textSize="15dp"
+                                    app:met_baseColor="@color/colorDark"
+                                    app:met_floatingLabel="highlight"
+                                    app:met_primaryColor="@color/colorPrimary"
+                                    app:met_singleLineEllipsis="true"
                                     />
                                 <LinearLayout
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content">
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:text="Phone No :"
-                                        android:layout_marginTop="10dp"
-                                        android:textSize="17dp"
-                                        android:textColor="@color/colorPrimary"
-                                        android:textStyle="bold"
-                                        android:textAlignment="center"
-                                        android:layout_weight="1"
-                                        android:layout_height="wrap_content"></TextView>
-                                    <EditText
+                                    <com.rengwuxian.materialedittext.MaterialEditText
                                         android:id="@+id/end_phone_txt"
-                                        android:layout_width="wrap_content"
-                                        android:hint="9320302403"
-                                        android:layout_marginTop="10dp"
-                                        android:textSize="17dp"
-                                        android:textAlignment="center"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
                                         android:layout_weight="1"
-                                        android:layout_height="wrap_content"></EditText>
+                                        android:hint="Phone Number "
+                                        app:met_textColorHint="@color/lightdark"
+                                        android:textColor="@color/colorDark"
+                                        app:met_baseColor="@color/colorDark"
+                                        app:met_floatingLabel="highlight"
+                                        app:met_primaryColor="@color/colorPrimary"
+                                        app:met_singleLineEllipsis="true"
+                                        />
                                     <ImageView
                                         android:id="@+id/endup_contact"
                                         android:layout_width="30dp"
@@ -212,6 +282,65 @@
                                         android:src="@drawable/ic_contact"
                                         android:layout_height="30dp"></ImageView>
                                 </LinearLayout>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_marginTop="10dp"
+                                    android:textColor="@color/colorDark"
+                                    android:text="When to arrive at this location"
+                                    android:layout_height="wrap_content"></TextView>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:weightSum="2"
+                                    android:orientation="horizontal"
+                                    android:layout_height="wrap_content">
+
+                                    <com.rengwuxian.materialedittext.MaterialEditText
+                                        android:id="@+id/endup_date_id"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:layout_weight="1"
+                                        android:hint="Date :"
+                                        app:met_textColorHint="@color/lightdark"
+                                        android:textColor="@color/colorDark"
+                                        android:drawableEnd="@drawable/ic_date"
+                                        app:met_baseColor="@color/colorDark"
+                                        app:met_floatingLabel="highlight"
+                                        android:drawablePadding="5dp"
+                                        app:met_primaryColor="@color/colorPrimary"
+                                        app:met_singleLineEllipsis="true"
+                                        />
+
+                                    <com.rengwuxian.materialedittext.MaterialEditText
+                                        android:id="@+id/endup_time_id"
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:hint="Time:"
+                                        android:layout_weight="1"
+                                        android:layout_marginLeft="10dp"
+                                        android:drawableEnd="@drawable/ic_time"
+                                        app:met_textColorHint="@color/lightdark"
+                                        android:textColor="@color/colorDark"
+                                        app:met_baseColor="@color/colorDark"
+                                        app:met_floatingLabel="highlight"
+                                        app:met_primaryColor="@color/colorPrimary"
+                                        app:met_singleLineEllipsis="true"
+                                        />
+                                </LinearLayout>
+
+                                <com.rengwuxian.materialedittext.MaterialEditText
+                                    android:id="@+id/endup_comment"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="match_parent"
+                                    android:layout_weight="1"
+                                    android:hint="Comment :"
+                                    app:met_textColorHint="@color/lightdark"
+                                    android:textColor="@color/colorDark"
+                                    app:met_baseColor="@color/colorDark"
+                                    app:met_floatingLabel="highlight"
+                                    app:met_primaryColor="@color/colorPrimary"
+                                    app:met_singleLineEllipsis="true"
+                                    />
+
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>

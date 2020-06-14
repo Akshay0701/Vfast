@@ -80,7 +80,7 @@ public class CustomerRegister extends AppCompatActivity {
                 String email=mEmailtext.getText().toString().trim();
                 String password=mpasswordtext.getText().toString().trim();
                 String confirm_password=confirm_passwordEt.getText().toString().trim();
-                String phone=phoneEt.getText().toString().trim();
+               String phone=phoneEt.getText().toString().trim();
                 String name=nameEt.getText().toString().trim();
 
 
@@ -96,7 +96,7 @@ public class CustomerRegister extends AppCompatActivity {
                 else if(!confirm_password.equals(password)){
                     mpasswordtext.setError("Password Doesn't Match");
                 }
-                else if(name.length()<15){
+                else if(name.length()>15){
                     nameEt.setError("Name length should less than 15 characters");
 
                  //   Toast.makeText(CustomerRegister.this, "Fill All Details", Toast.LENGTH_SHORT).show();

@@ -4,7 +4,6 @@
 
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/fdlogo"
@@ -12,6 +11,10 @@
         android:roundIcon="@drawable/fdlogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDl3kJwEpjj3EVWWoKtRxFIdjlo23fhLo8"/>
         <activity android:name=".LoadingScreend">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

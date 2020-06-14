@@ -1,43 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_gravity="center"
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".customerFragments.ChatFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
-        android:textSize="25dp"
+        android:textSize="35dp"
         android:textAlignment="center"
         android:text="Customer Care"
         tools:ignore="RtlCompat" />
-
-    <TextView
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorDark"
-        android:textSize="15dp"
-        android:layout_marginTop="10dp"
-        android:padding="20dp"
-        android:textAlignment="center"
-        android:text="If you find any trouble regarding your order,please contact below no."
-        tools:ignore="RtlCompat" />
+        android:src="@drawable/ques"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"></ImageView>
     <TextView
         android:id="@+id/customer_careNo"
         android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:textAlignment="center"
         android:text="90690434943"
         tools:ignore="RtlCompat" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/lightdark"></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@drawable/termicon"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"></ImageView>
+        <TextView
+            android:id="@+id/pdftxt"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/cardview_dark_background"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:text="Terms And Condition"
+            tools:ignore="RtlCompat" />
 </LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:src="@drawable/designcare"
+        android:layout_height="wrap_content"></ImageView>
+
+</LinearLayout>
+
+</ScrollView>

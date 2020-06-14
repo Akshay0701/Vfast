@@ -49,7 +49,7 @@ public class OrderDetails extends AppCompatActivity implements AdapterView.OnIte
 
     Button AcceptOrderBtn;
     //this is view of order
-    TextView Unametv,pricetxt,pickup_address_id,pickup_phone_txt,endup_address_id,end_phone_txt,productKeytxt,producttxt,statustxt,weighttxt;
+    TextView Unametv,pricetxt,pickup_address_id,pickup_phone_txt,endup_address_id,end_phone_txt,productKeytxt,producttxt,statustxt,weighttxt,end_phone_id,pickup_date_id,pickup_time_id,pickup_comment,endup_time_id,endup_date_id,endup_comment;
 
     //this is view of dele boy
     TextView isDeleAllocatedTxt,Delenametv,DelePhonetxt,DeleEmailtxt;
@@ -80,6 +80,12 @@ public class OrderDetails extends AppCompatActivity implements AdapterView.OnIte
         }
 
         //setting view of product
+        pickup_date_id=findViewById(R.id.pickup_date_id);
+        pickup_time_id=findViewById(R.id.pickup_time_id);
+        pickup_comment=findViewById(R.id.pickup_comment);
+        endup_time_id=findViewById(R.id.endup_time_id);
+        endup_date_id=findViewById(R.id.endup_date_id);
+        endup_comment=findViewById(R.id.endup_comment);
         Unametv=findViewById(R.id.Unametv);
         pricetxt=findViewById(R.id.pricetxt);
         pickup_address_id=findViewById(R.id.pickup_address_id);
@@ -123,6 +129,12 @@ public class OrderDetails extends AppCompatActivity implements AdapterView.OnIte
                     pickup_phone_txt.setText(modelOrders.getPickUp_phone());
                     weighttxt.setText("Weight :"+modelOrders.getProductWeight());
                     end_phone_txt.setText(modelOrders.getEndAddPhone());
+                    pickup_date_id.setText("Date :"+modelOrders.getPickUpDate());
+                    pickup_time_id.setText("Time :"+modelOrders.getPickUpTime());
+                    pickup_comment.setText("Comment :"+modelOrders.getPickUpComment());
+                    endup_time_id.setText("Time :"+modelOrders.getEndUpTime());
+                    endup_date_id.setText("Date :"+modelOrders.getEndUpDate());
+                    endup_comment.setText("Comment :"+modelOrders.getEndUpTime());
                     //.setText(modelOrders.getAllocated_DeleID());
                     if (!modelOrders.getProductPrice().equals("0")){
                         pricetxt.setText("Price :"+modelOrders.getProductPrice()+"₹");
