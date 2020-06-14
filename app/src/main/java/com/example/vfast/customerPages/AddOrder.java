@@ -3,17 +3,28 @@ package com.example.vfast.customerPages;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.provider.Settings;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
@@ -47,10 +58,23 @@ import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 import com.rtchagas.pingplacepicker.PingPlacePicker;
 
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+
+import static androidx.constraintlayout.motion.widget.Debug.getLocation;
 
 public class AddOrder extends AppCompatActivity  {
+
+    //map
+    private static final int REQUEST_LOCATION = 1;
+    Button btnGetLocation;
+    TextView showLocation;
+    LocationManager locationManager;
+    String latitude, longitude;
+
     String Name = "";
 
     private final int PickUP_PhoneCode=99;
@@ -83,6 +107,13 @@ public class AddOrder extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_order);
+        //for location
+        ActivityCompat.requestPermissions( this,
+                new String[] {Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
+
+        pickup_lcoation=findViewById(R.id.pickup_lcoation);
+
+
 
 
         orderBtn=findViewById(R.id.addOrder);
@@ -100,14 +131,22 @@ public class AddOrder extends AppCompatActivity  {
         end_phone_id=findViewById(R.id.end_phone_txt);
         pickup_contact=findViewById(R.id.pickup_contact);
         endup_contact=findViewById(R.id.endup_contact);
-        pickup_lcoation=findViewById(R.id.pickup_lcoation);
 
         //pick placex
         pickup_lcoation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //TODO:user place picker
-                showPlacePicker();
+                pickup_lcoation=findViewById(R.id.pickup_lcoation);
+                Log.e("address","address");
+                locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+                if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+                    OnGPS();
+
+                    Log.e("address","address");
+                } else {
+                    getLocation();
+                }
             }
         });
 
@@ -355,24 +394,66 @@ public class AddOrder extends AppCompatActivity  {
 
    }
 
-    private void showPlacePicker() {
-        PingPlacePicker.IntentBuilder builder = new PingPlacePicker.IntentBuilder();
-        builder.setAndroidApiKey("AIzaSyBXlrUtkOy1V2VyV3XqIpo-8Bf5nAjMcNM")
-                .setMapsApiKey("AIzaSyDl3kJwEpjj3EVWWoKtRxFIdjlo23fhLo8");
 
-        // If you want to set a initial location rather then the current device location.
-        // NOTE: enable_nearby_search MUST be true.
-        // builder.setLatLng(new LatLng(37.4219999, -122.0862462))
+   //for map
+   private void OnGPS() {
+       final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+       builder.setMessage("Enable GPS").setCancelable(false).setPositiveButton("Yes", new  DialogInterface.OnClickListener() {
+           @Override
+           public void onClick(DialogInterface dialog, int which) {
+               startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+           }
+       }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+           @Override
+           public void onClick(DialogInterface dialog, int which) {
+               dialog.cancel();
+           }
+       });
+       final AlertDialog alertDialog = builder.create();
+       alertDialog.show();
+   }
+    private void getLocation() {
+        Log.e("address","address");
+        if (ActivityCompat.checkSelfPermission(
+                AddOrder.this,Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                AddOrder.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
+        } else {
+            Location locationGPS = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            if (locationGPS != null) {
+                double lat = locationGPS.getLatitude();
+                double longi = locationGPS.getLongitude();
+                latitude = String.valueOf(lat);
+                longitude = String.valueOf(longi);
+                //showLocation.setText("Your Location: " + "\n" + "Latitude: " + latitude + "\n" + "Longitude: " + longitude);
+                Geocoder geocoder;
+                List<Address> addresses = null;
+                geocoder = new Geocoder(AddOrder.this, Locale.getDefault());
 
-        try {
-            Intent placeIntent = builder.build(AddOrder.this);
-            startActivityForResult(placeIntent, 1);
-        }
-        catch (Exception ex) {
-            // Google Play services is not available...
+                try {
+                    addresses = geocoder.getFromLocation(lat, longi, 1); // Here 1 represent max location result to returned, by documents it recommended 1 to 5
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                String address = addresses.get(0).getAddressLine(0); // If any additional address line present than only, check with max available address lines by getMaxAddressLineIndex()
+                String city = addresses.get(0).getLocality();
+                String state = addresses.get(0).getAdminArea();
+                String country = addresses.get(0).getCountryName();
+                String postalCode = addresses.get(0).getPostalCode();
+                String knownName = addresses.get(0).getFeatureName();
+                String addres=address+city+state+country+postalCode+knownName;
+                Log.e("address","address:"+address+city+state+country+postalCode+knownName);
+                if (pickup_address_id==null){
+                    return;
+                }
+                pickup_address_id.setText(addres);
+
+            } else {
+                Toast.makeText(this, "Unable to find location.", Toast.LENGTH_SHORT).show();
+            }
         }
     }
-
 
     private void setText(String str, EditText view) {
         view.setText(str);
@@ -463,13 +544,7 @@ public class AddOrder extends AppCompatActivity  {
                     }
                     break;
                 }
-            case (1):
-                if ((requestCode == 1) && (resultCode == RESULT_OK)) {
-                    Place place = PingPlacePicker.getPlace(data);
-                    if (place != null) {
-                        Toast.makeText(this, "You selected the place: " + place.getName(), Toast.LENGTH_SHORT).show();
-                    }
-                }
+
         }
     }
 
