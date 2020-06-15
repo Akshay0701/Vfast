@@ -58,11 +58,7 @@ dependencies {
     //pdf reader
     compile 'com.github.barteksc:android-pdf-viewer:2.0.3'
 
-    //place picker
-    // Places library
-    implementation 'com.google.android.libraries.places:places:2.0.0'
-    // PING Place Picker
-    implementation 'com.github.rtchagas:pingplacepicker:2.0.3'
+
 
 
 }

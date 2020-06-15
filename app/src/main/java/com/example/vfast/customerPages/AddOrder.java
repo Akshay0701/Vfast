@@ -27,21 +27,16 @@ import android.provider.Settings;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import com.example.vfast.MainActivity;
 import com.example.vfast.Model.ModelUser;
 import com.example.vfast.R;
-import com.google.android.libraries.places.api.model.Place;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -56,7 +51,6 @@ import com.karumi.dexter.listener.PermissionDeniedResponse;
 import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
-import com.rtchagas.pingplacepicker.PingPlacePicker;
 
 import java.io.IOException;
 import java.util.Calendar;
@@ -64,7 +58,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
-import static androidx.constraintlayout.motion.widget.Debug.getLocation;
 
 public class AddOrder extends AppCompatActivity  {
 
