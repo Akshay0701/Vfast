@@ -22,7 +22,7 @@ Delivery App
 ## Working ScreenShot
 
 ### Home Screen & Loading Screen
-<img src="https://lh5.googleusercontent.com/YuRvzkIdiVFCQ9gqtyU7gh5D4agZtbcKhwuLKmjaSnj8G1F1HhqbCDDE-sCQVwO_kTsf73sHAOoh9EjHKPgw=w1600-h708-rw" height="400" width="200">-------<img src="https://i.ibb.co/TtNDkf5/mainpage.jpg" height="400" width="200">-------<img src="https://i.ibb.co/RzBxfYK/profilepage.jpg" height="400" width="200">
+-------<img src="https://i.ibb.co/TtNDkf5/mainpage.jpg" height="400" width="200">-------<img src="https://i.ibb.co/RzBxfYK/profilepage.jpg" height="400" width="200">
 
 ### Dabba Order Screen
 <img src="https://i.ibb.co/dm0Whd7/loginpage.jpg" height="400" width="200">-------<img src="https://i.ibb.co/ZB0j9LR/addorder.jpg" height="400" width="200">-------<img src="https://i.ibb.co/bWhdxVS/myorder.jpg" height="400" width="200">
